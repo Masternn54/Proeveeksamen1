@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="progexam_1@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="progexam_1">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="agents"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="test"/>
+    <schema id="8" parent="1" name="usersystem"/>
+    <schema id="9" parent="1" name="world"/>
+    <table id="10" parent="2" name="agents"/>
+    <table id="11" parent="2" name="customers"/>
+    <table id="12" parent="2" name="orders"/>
+    <column id="13" parent="10" name="AGENT_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="14" parent="10" name="AGENT_NAME">
+      <Position>2</Position>
+      <DataType>char(40)|0</DataType>
+    </column>
+    <column id="15" parent="10" name="WORKING_AREA">
+      <Position>3</Position>
+      <DataType>char(35)|0</DataType>
+    </column>
+    <column id="16" parent="10" name="COMMISSION">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="17" parent="10" name="PHONE_NO">
+      <Position>5</Position>
+      <DataType>char(15)|0</DataType>
+    </column>
+    <column id="18" parent="10" name="COUNTRY">
+      <Position>6</Position>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <key id="19" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>AGENT_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="20" parent="10" name="Agents_Customers_CUST_ID_fk">
+      <ColNames>AGENT_ID</ColNames>
+      <RefSchemaName>progexam_1</RefSchemaName>
+      <RefTableName>customers</RefTableName>
+      <RefColNames>CUST_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="21" parent="10" name="Agents_Orders_ORD_ID_fk">
+      <ColNames>AGENT_ID</ColNames>
+      <RefSchemaName>progexam_1</RefSchemaName>
+      <RefTableName>orders</RefTableName>
+      <RefColNames>ORD_ID</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="22" parent="11" name="CUST_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="11" name="AGENT_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="24" parent="11" name="CUST_NAME">
+      <Position>3</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="11" name="WORKING_AREA">
+      <Position>4</Position>
+      <DataType>varchar(35)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="11" name="CUST_COUNTRY">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="11" name="GRADE">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="28" parent="11" name="OPENING_AMT">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="11" name="RECEIVE_AMT">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="11" name="PAYMENT_AMT">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="11" name="OUTSTANDING_AMT">
+      <Position>10</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="11" name="PHONE_NO">
+      <Position>11</Position>
+      <DataType>varchar(17)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="11" name="CUST_CITY">
+      <Position>12</Position>
+      <DataType>char(35)|0</DataType>
+    </column>
+    <key id="34" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CUST_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="11" name="Customer_Orders_ORD_ID_fk">
+      <ColNames>CUST_ID</ColNames>
+      <RefSchemaName>progexam_1</RefSchemaName>
+      <RefTableName>orders</RefTableName>
+      <RefColNames>ORD_ID</RefColNames>
+    </foreign-key>
+    <column id="36" parent="12" name="ORD_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="12" name="AGENT_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="38" parent="12" name="CUSTOMER_ID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="39" parent="12" name="ORD_DATE">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="12" name="ORD_DESCRIPTION">
+      <Position>5</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="12" name="ORD_AMOUNT">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="12" name="ADVANCE_AMOUNT">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="43" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ORD_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
